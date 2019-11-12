@@ -6,7 +6,6 @@ import com.twitter.bijection.avro.GenericAvroCodecs
 import org.apache.avro.file.DataFileReader
 import org.apache.avro.generic.{GenericData, GenericDatumReader, GenericRecord}
 import org.apache.avro.{Schema, SchemaBuilder}
-import org.apache.kafka.common.internals.Topic
 import scalaj.http.{Http, HttpResponse}
 
 import scala.collection.JavaConverters._
@@ -70,11 +69,11 @@ object WrappedKafkaAvroProducer
       .endRecord()
 
 
-  val x = (new Schema.Parser).parse(scala.io.Source.fromFile("avro/userdatawrapper.avsc").mkString).toString(false)
-
-  val fileReader = new DataFileReader[GenericRecord](new File("avro/userdata1.avro"), new GenericDatumReader[GenericRecord](schema))
-  val y = fileReader.next
-  println(getWrappedObject(y, getWrappedSchema(y.getSchema)))
-
-  println(send(y,"fifth"))
+//  val x = (new Schema.Parser).parse(scala.io.Source.fromFile("avro/userdatawrapper.avsc").mkString).toString(false)
+//
+//  val fileReader = new DataFileReader[GenericRecord](new File("avro/userdata1.avro"), new GenericDatumReader[GenericRecord](schema))
+//  val y = fileReader.next
+//  println(getWrappedObject(y, getWrappedSchema(y.getSchema)))
+//
+//  println(send(y,"fifth"))
 }

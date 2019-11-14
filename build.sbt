@@ -17,3 +17,5 @@ libraryDependencies ++= Seq("org.apache.kafka" % "kafka-clients" % "2.2.1",
   "org.scalaj" %% "scalaj-http" % "2.4.2",
   "com.typesafe" % "config" % "1.4.0"
 )
+
+addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.2.1")
